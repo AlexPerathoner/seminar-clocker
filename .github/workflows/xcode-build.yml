@@ -27,10 +27,11 @@ jobs:
       - name: Build and Test
         continue-on-error: true
         id: run-tests
+        working-directory: ./Clocker
         run: |
           xcodebuild clean test \
-          -project SlimHUD.xcodeproj \
-          -scheme SlimHUD-GitHub-Action \
+          -project Clocker.xcodeproj \
+          -scheme UITests \
           -destination platform=macOS \
           -resultBundlePath TestResults \
           -test-iterations 20 \
